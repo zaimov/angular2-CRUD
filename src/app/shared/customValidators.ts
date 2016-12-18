@@ -8,7 +8,7 @@ export class CustomValidators {
     }
 
     static alphaNumeric(control: AbstractControl)  {
-        const regEx = /^[a-zA-Z0-9\-_]{1,10}$/;
+        const regEx = /^[a-zA-Z0-9\-_]{1,15}$/;
         const valid = regEx.test(control.value);
         return valid ? null : { username: true };
     }

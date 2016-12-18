@@ -16,8 +16,27 @@ export class UserService {
       .map(response => response.json());
   }
 
-  addUser(user: User) {
+  public getUser(userId) {
+    return this.http.get(this.getUserUrl(userId))
+      .map(response => response.json());
+  }
+
+  public addUser(user: User) {
     return this.http.post(this.url, JSON.stringify(user))
       .map(response => response.json());
+  }
+
+  public updateUser(user: User) {
+    return this.http.put(this.getUserUrl(user.id), JSON.stringify(user))
+      .map(response => response.json());
+  }
+
+  public deleteUser(userId) {
+    return this.http.delete(this.getUserUrl(userId))
+      .map(response => response.json());
+  }
+
+  private getUserUrl(userId) {
+    return this.url + '/' + userId;
   }
 }
