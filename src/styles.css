@@ -8,8 +8,20 @@ body,
 
 .btn,
 input.form-control,
-.alert {
+.alert,
+.panel,
+.panel-heading {
 	border-radius: 4px;
+}
+
+.list-group-item:first-child {
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
+.list-group-item:last-child {
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
 }
 
 .ng-invalid:not(form)  {

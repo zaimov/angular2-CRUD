@@ -9,7 +9,7 @@ import { User } from './user.model';
 })
 export class UsersComponent implements OnInit {
 
-  private users;
+  private users: User[] = [];
 
   constructor(private userService: UserService) { }
 
@@ -24,7 +24,7 @@ export class UsersComponent implements OnInit {
 
   //optimistic update
   deleteUser(user: User) {
-    const index = this.users.indexOf(user);
+    let index = this.users.indexOf(user);
     if(confirm('Are you sure you want to delete ' + user.name + '?')) {
       //remove the user from the users array
       this.users.splice(index, 1);
