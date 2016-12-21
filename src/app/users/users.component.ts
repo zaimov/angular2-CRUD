@@ -30,11 +30,11 @@ export class UsersComponent implements OnInit {
       this.users.splice(index, 1);
       //call the server to delete the user 
       this.userService.deleteUser(user)
-         .subscribe(//null,
-        //   error => {
-        //     alert('Could not delete the user.');
-        //     this.users.splice(index, 0, user);
-        //   }
+         .subscribe(null,
+           error => {
+             alert('Could not delete the user because it si a Fake Online REST API for Testing.');
+             this.users.splice(index, 0, user);
+           }
         )
     }
   }

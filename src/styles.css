@@ -10,7 +10,8 @@ body,
 input.form-control,
 .alert,
 .panel,
-.panel-heading {
+.panel-heading,
+.container .jumbotron {
 	border-radius: 4px;
 }
 
